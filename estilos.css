@@ -1,5 +1,5 @@
 /* Estilos base */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
 * {
   margin: 0;
@@ -8,15 +8,16 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Nunito", sans-serif; /* Fuente más redondeada */
   font-size: 16px;
   color: #333;
   text-align: center;
+  background: #ff22de; /* Fondo en color pastel rosa */
   padding: 0;
-  background: #f3f4f6;
+  overflow-x: hidden; /* Evita el desbordamiento horizontal */
 }
 
-/* Animación de fondo minimalista */
+/* Animación de fondo moderno */
 body::before {
   content: '';
   position: fixed;
@@ -25,8 +26,8 @@ body::before {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: linear-gradient(45deg, #dcd6f7, #a28bd4);
-  animation: animateBackground 15s linear infinite alternate;
+  background: linear-gradient(135deg, #f0e6f6, #d0a9f5); /* Colores pastel lila y rosa */
+  animation: animateBackground 10s ease infinite alternate;
 }
 
 @keyframes animateBackground {
@@ -40,21 +41,49 @@ body::before {
 
 /* Contenedor principal */
 .content {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 15px;
-  max-width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px auto; /* Centra el contenido */
+  background-color: #ffffff; /* Fondo blanco para contraste */
+  padding: 30px; /* Reducido el padding */
+  border-radius: 20px; /* Bordes un poco menos redondeados */
+  max-width: 80%; /* Reducido el ancho máximo */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+  margin: 20px auto;
   position: relative;
   z-index: 1;
 }
 
+/* Estilo del título */
 h1 {
-  font-weight: 600;
-  font-size: 2em;
-  margin: 20px 0;
-  color: #6a5acd; /* Color morado */
+  font-weight: 700; /* Mayor peso para destacar el título */
+  font-size: 2.2em; /* Reducido el tamaño del título */
+  margin: 15px 0;
+  color: #e073fe; /* Color lila pastel */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); /* Efecto de sombra más sutil */
+  letter-spacing: 1px; /* Espaciado de letras para mejor legibilidad */
+}
+
+/* Botón */
+button {
+  background-color: #f5a9b8; /* Color pastel rosa */
+  color: #ffffff; /* Color del texto */
+  border: none;
+  padding: 10px 20px; /* Reducido el padding */
+  border-radius: 20px; /* Bordes un poco menos redondeados */
+  font-size: 0.9em; /* Reducido el tamaño de la fuente */
+  font-weight: 600; /* Fuente más gruesa */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+  outline: none; /* Elimina el contorno por defecto */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para el botón */
+}
+
+button:hover {
+  background-color: #e8a3b2; /* Cambia el color al pasar el mouse */
+  transform: scale(1.05); /* Efecto de aumento */
+}
+
+button:active {
+  background-color: #d87b91; /* Cambia el color cuando el botón es presionado */
+  transform: scale(0.98); /* Efecto de presionado */
 }
 
 /* Contenedor de archivos e imágenes */
@@ -62,13 +91,13 @@ h1 {
 .container2 {
   width: 100%;
   max-width: 100%;
-  min-height: 250px; /* Aumenta la altura mínima para ser más espacioso */
-  padding: 20px;
-  border-radius: 12px;
-  transition: all .3s ease-in-out;
-  background-color: #ece7f7; /* Fondo lila claro */
+  min-height: 250px; /* Reducida la altura mínima */
+  padding: 20px; /* Reducido el padding */
+  border-radius: 15px;
+  transition: all .3s ease;
+  background-color: #f8e1f5; /* Fondo rosa pastel */
   position: relative;
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,70 +106,78 @@ h1 {
 
 /* Estilo del área de arrastre */
 .drop-area {
-  border: 2px dashed #8e7cc3; /* Borde morado */
-  background-color: #f5f0ff; /* Fondo lila claro */
-  cursor: pointer; /* Indica que el área es interactiva */
+  border: 2px dashed #d8a9f5; /* Borde lila pastel */
+  background-color: #fbe6fd; /* Fondo rosa pálido */
+  cursor: pointer;
+  transition: border-color .3s ease, background-color .3s ease; /* Transición suave */
+}
+
+.drop-area:hover {
+  border-color: #c77cfc; /* Cambia el color del borde al pasar el mouse */
+  background-color: #e5b8ff; /* Cambia el color de fondo al pasar el mouse */
 }
 
 .file-input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-    z-index: 1;
-  }
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+}
 
 /* Estilo para el contenedor de archivos */
 .container2 {
-  background-color: #e4d3ff; /* Fondo lila claro */
+  background-color: #ffffff; /* Fondo blanco para contraste */
   overflow-y: auto;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Estilos para pantallas más pequeñas */
 @media screen and (max-width: 768px) {
   body {
-    padding: 10px; /* Ajusta el padding del body para pantallas más pequeñas */
+    padding: 10px;
   }
 
   .content {
-    padding: 15px;
-    margin: 10px auto; /* Ajusta el margen para pantallas pequeñas */
+    padding: 20px; /* Reducido el padding */
+    margin: 15px auto;
   }
 
   h1 {
-    font-size: 1.5em; /* Ajusta el tamaño del texto del encabezado */
+    font-size: 2em; /* Reducido el tamaño del título */
   }
 
   .drop-area,
   .container2 {
-    min-height: 200px; /* Ajusta la altura mínima para pantallas más pequeñas */
-    padding: 15px; /* Ajusta el padding para pantallas más pequeñas */
+    min-height: 200px; /* Reducida la altura mínima */
+    padding: 15px; /* Reducido el padding */
   }
 
-  .drop-area label {
-    padding: 12px 25px; /* Ajusta el tamaño del botón para pantallas más pequeñas */
-    font-size: 1em; /* Ajusta el tamaño del texto del botón para pantallas más pequeñas */
+  button {
+    padding: 8px 16px; /* Reducido el padding del botón */
   }
 }
 
 @media screen and (max-width: 480px) {
   h1 {
-    font-size: 1.2em; /* Ajusta aún más el tamaño del texto para pantallas muy pequeñas */
+    font-size: 1.6em; /* Reducido el tamaño del título */
   }
 
   .drop-area,
   .container2 {
-    min-height: 150px; /* Reduce la altura mínima para pantallas muy pequeñas */
-    padding: 10px; /* Ajusta el padding para pantallas muy pequeñas */
+    min-height: 180px; /* Reducida la altura mínima */
+    padding: 10px; /* Reducido el padding */
   }
 
-  .drop-area label {
-    padding: 10px 20px; /* Ajusta el tamaño del botón para pantallas muy pequeñas */
-    font-size: 0.9em; /* Ajusta el tamaño del texto del botón para pantallas muy pequeñas */
+  button {
+    padding: 6px 12px; /* Reducido aún más el padding del botón */
   }
+}
+
+/* Accesibilidad */
+:focus {
+  outline: 2px solid #ff00a6; /* Agrega un contorno de foco para accesibilidad */
 }
