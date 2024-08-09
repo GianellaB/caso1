@@ -1,0 +1,146 @@
+/* Estilos base */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  padding: 0;
+  background: #f3f4f6;
+}
+
+/* Animación de fondo minimalista */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(45deg, #dcd6f7, #a28bd4);
+  animation: animateBackground 15s linear infinite alternate;
+}
+
+@keyframes animateBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Contenedor principal */
+.content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto; /* Centra el contenido */
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 2em;
+  margin: 20px 0;
+  color: #6a5acd; /* Color morado */
+}
+
+/* Contenedor de archivos e imágenes */
+.drop-area,
+.container2 {
+  width: 100%;
+  max-width: 100%;
+  min-height: 250px; /* Aumenta la altura mínima para ser más espacioso */
+  padding: 20px;
+  border-radius: 12px;
+  transition: all .3s ease-in-out;
+  background-color: #ece7f7; /* Fondo lila claro */
+  position: relative;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Estilo del área de arrastre */
+.drop-area {
+  border: 2px dashed #8e7cc3; /* Borde morado */
+  background-color: #f5f0ff; /* Fondo lila claro */
+  cursor: pointer; /* Indica que el área es interactiva */
+}
+
+.file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+
+/* Estilo para el contenedor de archivos */
+.container2 {
+  background-color: #e4d3ff; /* Fondo lila claro */
+  overflow-y: auto;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px; /* Ajusta el padding del body para pantallas más pequeñas */
+  }
+
+  .content {
+    padding: 15px;
+    margin: 10px auto; /* Ajusta el margen para pantallas pequeñas */
+  }
+
+  h1 {
+    font-size: 1.5em; /* Ajusta el tamaño del texto del encabezado */
+  }
+
+  .drop-area,
+  .container2 {
+    min-height: 200px; /* Ajusta la altura mínima para pantallas más pequeñas */
+    padding: 15px; /* Ajusta el padding para pantallas más pequeñas */
+  }
+
+  .drop-area label {
+    padding: 12px 25px; /* Ajusta el tamaño del botón para pantallas más pequeñas */
+    font-size: 1em; /* Ajusta el tamaño del texto del botón para pantallas más pequeñas */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.2em; /* Ajusta aún más el tamaño del texto para pantallas muy pequeñas */
+  }
+
+  .drop-area,
+  .container2 {
+    min-height: 150px; /* Reduce la altura mínima para pantallas muy pequeñas */
+    padding: 10px; /* Ajusta el padding para pantallas muy pequeñas */
+  }
+
+  .drop-area label {
+    padding: 10px 20px; /* Ajusta el tamaño del botón para pantallas muy pequeñas */
+    font-size: 0.9em; /* Ajusta el tamaño del texto del botón para pantallas muy pequeñas */
+  }
+}
